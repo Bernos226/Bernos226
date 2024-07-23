@@ -1,0 +1,98 @@
+ public Student findStudent(String sno) {
+        Connection conn=null;                        
+        Statement stmt=null;                     
+        String sql = "select *from student where sno='" + sno + "'";
+        Student s = null;
+        DBConn db = new DBConn();
+        conn = db.getConn();
+        try {
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery(sql);
+            if (rs.next()) {
+                s = new Student();
+                s.setSno(rs.getString("sno"));
+                s.setSname(rs.getString("sname"));
+                s.setSsex(rs.getString("ssex"));
+                s.setSethnix(rs.getString("sethnix"));
+                s.setShome(rs.getString("shome"));
+                s.setSyear(rs.getString("syear"));
+                s.setSmajor(rs.getString("smajor"));
+                s.setScollege(rs.getString("scollege"));
+                s.setSbirth(rs.getString("sbirth"));
+            }
+            rs.close();
+            stmt.close();
+            conn.close();
+        }
+        catch (SQLException ex3) {
+            ex3.printStackTrace();
+        }
+        return s;
+    }
+    
+    public Student findStudentname(String sname) {
+        Connection conn=null;                        
+        Statement stmt=null;                         
+        ResultSet rs=null;                         
+        String sql = "select *from student where sname='" + sname + "'";
+        Student s = null;
+        DBConn db = new DBConn();
+        conn = db.getConn();
+        try {
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery(sql);
+            if (rs.next()) {
+                s = new Student();
+                s.setSno(rs.getString("sno"));
+                s.setSname(rs.getString("sname"));
+                s.setSsex(rs.getString("ssex"));
+                s.setSethnix(rs.getString("sethnix"));
+                s.setShome(rs.getString("shome"));
+                s.setSyear(rs.getString("syear"));
+                s.setSmajor(rs.getString("smajor"));
+                s.setScollege(rs.getString("scollege"));
+                s.setSbirth(rs.getString("sbirth"));
+            }
+            rs.close();
+            stmt.close();
+            conn.close();
+        }
+        catch (SQLException ex3) {
+            ex3.printStackTrace();
+        }
+        return s;
+    }
+  
+    public Student findStudentsex(String ssex) {
+        Connection conn=null;                        
+        Statement stmt=null;                       
+        ResultSet rs=null;                           
+        String sql = "select *from student where ssex='" + ssex + "'";
+        Student s = null;
+        DBConn db = new DBConn();
+        conn = db.getConn();
+        try {
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery(sql);
+            if (rs.next()) {
+                s = new Student();
+                s.setSno(rs.getString("sno"));
+                s.setSname(rs.getString("sname"));
+                s.setSsex(rs.getString("ssex"));
+                s.setSethnix(rs.getString("sethnix"));
+                s.setShome(rs.getString("shome"));
+                s.setSyear(rs.getString("syear"));
+                s.setSmajor(rs.getString("smajor"));
+                s.setScollege(rs.getString("scollege"));
+                s.setSbirth(rs.getString("sbirth"));
+            }
+            rs.close();
+            stmt.close();
+            conn.close();
+        }
+        catch (SQLException ex3) {
+            ex3.printStackTrace();
+        }
+        return s;
+    }
+
